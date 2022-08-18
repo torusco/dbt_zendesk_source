@@ -204,8 +204,12 @@ sources:
           - name: id
             description: Automatically assigned when the user is created
           - name: email
+            meta:
+              contains_pii: true
             description: The user's primary email address. *Writeable on create only. On update, a secondary email is added. See Email Address
           - name: name
+            meta:
+              contains_pii: true
             description: The user's name
           - name: active
             description: false if the user has been deleted
@@ -213,6 +217,9 @@ sources:
             description: The time the user was created
           - name: organization_id
             description: The id of the user's organization. If the user has more than one organization memberships, the id of the user's default organization
+          - name: phone
+            meta:
+              contains_pii: true
           - name: role
             description: The user's role. Possible values are "end-user", "agent", or "admin"
           - name: time_zone
